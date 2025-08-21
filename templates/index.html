@@ -7,7 +7,17 @@
 <body>
     <h1>Cam Raspberry Pi</h1>
     <a href="/tomar_foto"><button>📸 Tomar Foto</button></a>
-    <h2>Última Foto:</h2>
-    <img src="/static/fotos/foto_web.jpg" alt="Foto" width="640">
+
+    {% if foto %}
+        <div style="display:flex; align-items:center; margin-top:20px;">
+            <img src="{{ foto }}" alt="Foto" width="640" style="margin-right:20px;">
+            <div>
+                <strong>Fecha y Hora:</strong><br>
+                {{ fecha }}
+            </div>
+        </div>
+    {% else %}
+        <p>No se ha tomado ninguna foto aún.</p>
+    {% endif %}
 </body>
 </html>
